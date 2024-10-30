@@ -18,7 +18,7 @@ public class launchbrowser {
             Page page = browser.newPage();
             page.navigate("http://playwright.dev");
             page.locator("//a[normalize-space()='Get started']").click();
-            page.close();
+           
             
 
 	}
