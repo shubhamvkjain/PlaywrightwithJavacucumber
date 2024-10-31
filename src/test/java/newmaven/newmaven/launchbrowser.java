@@ -17,12 +17,13 @@ public class launchbrowser {
 		
 		    Playwright playwright = Playwright.create();
             Browser browser = playwright.chromium().launch(
-            		new LaunchOptions().setHeadless(false).setSlowMo(50)
+            		new LaunchOptions().setHeadless(false).setSlowMo(100)
             	);
             Page page = browser.newPage();
             page.navigate("http://playwright.dev");
             assertThat(page).hasTitle(Pattern.compile("Playwright"));
             page.locator("//a[normalize-space()='Get started']").click();
+            page.locator("//a[normalize-space()='Generating tests']").click();
             page.close();
             
 
